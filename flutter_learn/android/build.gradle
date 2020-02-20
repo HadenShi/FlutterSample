@@ -1,20 +1,23 @@
 buildscript {
-    ext.kotlin_version = '1.3.50'
+    ext.android_version = PLUGIN_ANDROID_VERSION
+    ext.kotlin_version = PLUGIN_KOTLIN_VERSION
     repositories {
+		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
         google()
-        jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath "com.android.tools.build:gradle:$android_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 allprojects {
     repositories {
+		maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
         google()
-        jcenter()
     }
 }
 
